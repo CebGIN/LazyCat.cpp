@@ -45,7 +45,7 @@ void ModelManager::downloadModel(const std::string& repo_id) {
     std::cout << "Downloading model from " << repo_id << " to " << model_dir << "\n";
     
     // Example command: huggingface-cli download <repo_id> --local-dir <model_dir> --include "*.gguf"
-    std::string command = "huggingface-cli download " + repo_id + " --local-dir " + model_dir + " --include \"*.gguf\"";
+    std::string command = "hf download " + repo_id + " --local-dir " + model_dir + " --include \"*.gguf\"";
     
     int result = std::system(command.c_str());
     if (result == 0) {

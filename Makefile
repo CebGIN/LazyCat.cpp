@@ -14,7 +14,8 @@ INC_DIR = include
 SRCS = $(SRC_DIR)/main.cpp \
        $(SRC_DIR)/ConfigManager.cpp \
        $(SRC_DIR)/ModelManager.cpp \
-       $(SRC_DIR)/ExecutionEngine.cpp
+       $(SRC_DIR)/ExecutionEngine.cpp \
+       $(SRC_DIR)/LazyTUI.cpp
 
 # Generar la lista de archivos de objeto (.o) en la raíz temporal
 OBJS = $(SRCS:.cpp=.o)
