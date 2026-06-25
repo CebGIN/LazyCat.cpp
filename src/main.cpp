@@ -27,12 +27,16 @@ int main(int argc, char* argv[]) {
 
     if (command == "list") {
         ModelManager::listModels();
+    
     } else if (command == "download") {
         if (argc < 3) {
-            std::cerr << "Usage: lazycat download <repo_id>\n";
+            std::cerr << "Usage: lazycat download <repo_id> [quantization]\n";
             return 1;
         }
-        ModelManager::downloadModel(argv[2]);
+        
+        // Si hay más de 3 argumentos, pasamos el formato de cuantización, si no, pasamos cadena vacía
+        std::string quant = (argc >= 4) ? argv[3] : "";
+        ModelManager::downloadModel(argv[2], quant);
     } else if (command == "delete") {
         if (argc < 3) {
             std::cerr << "Usage: lazycat delete <filename>\n";
